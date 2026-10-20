@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <p class="nome"> Lucia</p>
+    <img class="personagem" src="img/lucia.png">
+
+    <div class="textos">
+        <p class="etiqueta">selecione seu personagem</p>
+        <h1> NÃO É SÓ <br> UM JOGO</h1>
+        <P class="texto-apoio">escolha uma lenda de Dev city ou tire uma self e vire uma </P>
+    </div>
+    <div class="menu">
+
+        <img onclick="escolherPersonagem( 'Lucia', 'img/lucia.png', '#ff3cac' )" class="avatar"
+            src="img/lucia.png">
+        <img onclick="escolherPersonagem( 'Jason', 'img/jason.png', '#00b2c9' )" class="avatar"
+            src="img/jason.png">
+        <img onclick="escolherPersonagem( 'CJ', 'img/cj.png','#7ed373')" class="avatar" src="img/cj.png">
+        <label class="voce">📷
+            <input type="file"
+             accept="image/*" 
+             hidden 
+             onchange=  "lerFoto (this)">
+         </label>
+
+    </div>
+
+    <div> 
+        <h2> Dev City  </h2>
+    </div>
+</body>
+ <script src="https://js.puter.com/v2/"></script> 
+<script src="scripts.js">
+   
+
+
+</script>
+
+</html>
