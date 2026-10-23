@@ -4,51 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-
+    <title>Dev City - Escolha seu personagem</title>
+    <meta name="description" content="Escolha uma lenda de Dev City ou envie uma selfie e transforme em personagem de jogo com IA.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <h2 class="titulo-cidade">Dev City</h2>
 
-    <p class="nome"> Lucia</p>
-    <img class="personagem" src="img/lucia.png">
+    <!-- O nome vem ANTES da imagem no HTML, então a imagem fica por cima dele -->
+    <p class="nome">Lucia</p>
+    <img class="personagem" src="img/lucia.png" alt="Personagem Lucia">
+
+    <!-- Mensagem de carregamento (fica escondida até a IA começar a trabalhar) -->
+    <p class="carregando" role="status" hidden>Criando personagem...</p>
+
+    <!-- Dicas rápidas para o usuário (ex.: "faça login") -->
+    <p class="dica" role="status" hidden></p>
 
     <div class="textos">
         <p class="etiqueta">selecione seu personagem</p>
-        <h1> NÃO É SÓ <br> UM JOGO</h1>
-        <P class="texto-apoio">escolha uma lenda de Dev city ou tire uma self e vire uma </P>
+        <h1>NÃO É SÓ <br> UM JOGO</h1>
+        <p class="texto-apoio">escolha uma lenda de Dev City ou tire uma selfie e vire uma lenda!</p>
     </div>
+
+    <!-- Botões de verdade: funcionam com mouse, toque e teclado -->
     <div class="menu">
+        <button class="avatar-btn" type="button" data-nome="Lucia" data-img="img/lucia.png" data-cor="#ff3cac" data-fundo="img/background2.png"
+            aria-label="Escolher Lucia">
+            <img class="avatar" src="img/lucia.png" alt="">
+        </button>
+        <button class="avatar-btn" type="button" data-nome="Jason" data-img="img/jason.png" data-cor="#00b2c9" data-fundo="img/background-jason.png"
+            aria-label="Escolher Jason">
+            <img class="avatar" src="img/jason.png" alt="">
+        </button>
+        <button class="avatar-btn" type="button" data-nome="CJ" data-img="img/cj.png" data-cor="#7ed373" data-fundo="img/background-cj.png"
+            aria-label="Escolher CJ">
+            <img class="avatar" src="img/cj.png" alt="">
+        </button>
 
-        <img onclick="escolherPersonagem( 'Lucia', 'img/lucia.png', '#ff3cac' )" class="avatar"
-            src="img/lucia.png">
-        <img onclick="escolherPersonagem( 'Jason', 'img/jason.png', '#00b2c9' )" class="avatar"
-            src="img/jason.png">
-        <img onclick="escolherPersonagem( 'CJ', 'img/cj.png','#7ed373')" class="avatar" src="img/cj.png">
-        <label class="voce">📷
-            <input type="file"
-             accept="image/*" 
-             hidden 
-             onchange=  "lerFoto (this)">
-         </label>
-
+        <button class="voce" id="botao-foto" type="button" aria-label="Criar meu personagem com uma foto"
+            title="Criar meu personagem com IA (pede login no Puter)">📷</button>
+        <input id="input-foto" type="file" accept="image/*" hidden>
     </div>
 
-    <div> 
-        <h2> Dev City  </h2>
-    </div>
+    <p class="aviso">Criar seu personagem com IA pede login em uma conta Puter. Sua foto é enviada a um serviço de IA. Projeto de fã, sem fins lucrativos.</p>
+
+    <!-- Scripts no final do body: a página já existe quando o JS roda -->
+    <script src="https://js.puter.com/v2/"></script>
+    <script src="scripts.js"></script>
 </body>
- <script src="https://js.puter.com/v2/"></script> 
-<script src="scripts.js">
-   
-
-
-</script>
 
 </html>
